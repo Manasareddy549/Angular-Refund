@@ -1,0 +1,27 @@
+<head>
+    <title>create table</title> <!--this tag is used to display the title-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+<style>
+body{background-color:lightblue}
+</style>
+</head>
+    <h3>CANCEL YOUR TICKETS NOW</h3>
+Enter your account no. : <input type="text" name="acc_no" [(ngModel)]="accountNo" required placeholder="enter your account no." id="rcorners2"  ><br><br>
+Enter your booking Id : <input type="text" name="book_id" [(ngModel)]="booking_id" required placeholder="enter your booking Id" id="rcorners2"  ><br><br>
+    <input type="submit" value="submit" (click)="refund_data()" id="rcorners2" >
+<br>
+
+<div *ngIf="check" align="center">
+    <h3>Money was refunded successfully!!</h3>
+    <h3>Money Refunded : {{refunddetails.money_refunded}}</h3><br>
+    <h3>No. of seats booked by you : {{refund.seats_booked}}</h3><br>
+    <h3>Seat type : {{refund.seat_type}}</h3>
+</div>
+<br>
+
+<div *ngIf="check1" align="center">
+    <h2>Sorry, the entered details were incorrect</h2>
+    <h3>or</h3><br>
+    <h2>refunding already executed in the past</h2>
+</div>
