@@ -8,13 +8,22 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CancelTicketComponent } from './cancel-ticket/cancel-ticket.component';
 import { BookMovieComponent } from './bookmovie/bookmovie.component';
+import { UpdateseatsComponent } from './updateseats/updateseats.component';
+import { RefundComponent } from './refund/refund.component';
+import { ListseatsComponent } from './listseats/listseats.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookMovieComponent,
     
-    CancelTicketComponent
+    CancelTicketComponent,
+    
+    UpdateseatsComponent,
+    
+    RefundComponent,
+    
+    ListseatsComponent
   ],
   imports: [
     HttpClientModule,

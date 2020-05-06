@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 export class Payments{
   account_no:number;
   money_collected:number;
@@ -17,6 +18,19 @@ export class Payments{
   }
 }
 
+export class Seat{
+
+  sno:number;
+  seat_type:string;
+ available_seats:number;
+ price:number;
+  constructor(sno:number, seat_type:string, available_seats:number,price:number){
+          this.sno=sno,
+          this.seat_type=seat_type,
+          this.available_seats=available_seats,
+          this.price=price
+      }
+}
 export class Refund{
   account_no:number;
   money_refunded:number;
@@ -30,12 +44,12 @@ export class Refund{
   }
 }
 
-
 @Injectable({
   providedIn: 'root'
 })
 
 export class MovieServiceService {
+ 
 
   constructor(private http:HttpClient) { }
 
@@ -66,6 +80,10 @@ export class MovieServiceService {
   public selected_language(){
     return this.http.get("http://localhost:5454/seats",{responseType:'json'});
   }
+  public seatslist(){
+  return this.http.get("http://localhost:5454/seats",{responseType:'json'});
+  
+}
 
   public check_account(account_No){
     return this.http.get("http://localhost:5454/account_data/"+account_No,{responseType:'json'});
@@ -98,5 +116,12 @@ export class MovieServiceService {
 
   public set_seat_details(seat_obj){
     return this.http.put("http://localhost:5454/set_seats",seat_obj,{responseType:'text'});
+  }
+  public getAllRefund() {
+    return this.http.get("http://localhost:5454/listrefund",{responseType:'json'});
+ 
+  }
+  public update_customer(cust){
+    return this.http.put("http://localhost:5454/update_customer",cust,{responseType:'text'});
   }
 }

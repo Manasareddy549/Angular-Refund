@@ -98,7 +98,8 @@ constructor(private service:MovieServiceService) {
     this.check1 = true;
     this.check5 = false;
     }
-    else{
+    else
+    {
       this.check5 = true;
       this.check1 = false;
     }
@@ -114,7 +115,8 @@ constructor(private service:MovieServiceService) {
         this.check3 = false;
         this.check4 = false;
       }
-      else if(this.account_data.current_balance - this.total_amount < 0){
+      else if(this.account_data.current_balance - this.total_amount < 0)
+      {
         this.check2 = true;
         this.check3 = false;
         this.check4 = false;
